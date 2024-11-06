@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Quiz</h1>
+    <form action="{{ url_for('quiz') }}" method="post">
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" id="email" required placeholder="Enter your email">
+
+        <label for="category">Choose a Category:</label>
+        <select name="category" id="category">
+            <option value="9">General Knowledge</option>
+            <option value="18">Computers</option>
+            <option value="21">Sports</option>
+            <option value="23">History</option>
+            <option value="24">Politics</option>
+            <option value="27">Animals</option>
+            <option value="28">Vehicles</option>
+            <option value="31">Anime & Manga</option>
+        </select>
+
+        <label for="difficulty">Choose Difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <label for="amount">Number of Questions:</label>
+        <input type="number" name="amount" min="1" max="20" value="10">
+
+        <button type="submit">Start Quiz</button>
+    </form>
+</body>
+</html>
