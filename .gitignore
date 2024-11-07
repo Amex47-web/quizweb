@@ -1,0 +1,31 @@
+# Python-related files
+__pycache__/
+*.pyc
+*.pyo
+instance/
+.env
+
+# IDE/Editor settings (e.g., VS Code or PyCharm)
+.vscode/
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Node.js files (if using Node for Tailwind build process)
+node_modules/
+npm-debug.log
+
+# Tailwind build outputs (if using Tailwind CLI to build styles)
+dist/
+public/
+
+# Static assets (e.g., if you regenerate styles)
+static/tailwind.css
+static/style.css
+
+# SQLite database file (if used)
+*.sqlite3
+
+# Log files
+*.log

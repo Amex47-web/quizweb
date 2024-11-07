@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Quiz</title>
+</head>
+<body class="font-roboto bg-bg-color text-text-color">
+    <h1 class="font-poppins text-3xl text-center mb-8">Quiz Questions</h1>
+    <form action="{{ url_for('submit') }}" method="post" class="space-y-6 px-6">
+        <!-- Initialize a custom variable to store unique numbers -->
+        {% for question in questions %}
+        {% set idx = loop.index %}
+            <div class="question">
+                <p class="text-xl">{{ loop.index }}. {{ question['question'] }}</p>
+                {% for option in question['options'] %}
+                    <label class="block">
+                        <!-- Use the custom variable idx to create unique names -->
+                        <input type="radio" name="question-{{ idx }}" value="{{ option }}" class="mr-2">
+                        {{ option }}
+                    </label>
+                    <!-- Increment the idx for the next option -->
+                {% endfor %}
+                {% set idx = idx + 1 %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="bg-primary-btn text-white px-6 py-2 rounded-lg hover:bg-primary-btn-hover">Submit Answers</button>
+    </form>
+</body>
+</html>
