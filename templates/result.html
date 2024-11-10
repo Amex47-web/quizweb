@@ -5,11 +5,14 @@
     <title>Quiz Result</title>
 </head>
 <body class="font-roboto bg-bg-color text-text-color">
-    <h1 class="font-poppins text-3xl text-center mb-4">Your Result</h1>
-    <p class="text-lg text-center">Your Score: {{ score }} / {{ total }}</p>
-    <div class="flex justify-between">
-        <a href="{{ url_for('index') }}" class="text-center mt-4 bg-secondary-btn text-white px-6 py-2 rounded-lg hover:bg-secondary-btn-hover">Try Another Quiz</a>
-        
-    </div>   
+   <div class="w-full h-screen  font-roboto bg-bg-color text-text-color">
+        <div class="w-1/2 h-1/2 bg-blue-200 rounded-md mt-4 p-4 mx-auto shadow-sm flex flex-col gap-4 items-center">
+        <h1 class="font-poppins text-3xl text-center mb-4">Your Result</h1>
+        <p class="text-lg text-center">Your Score: {{ score }} / {{ total }}</p>
+       
+            <a href="{{ url_for('home') }}" class="text-center mt-4 bg-secondary-btn text-white px-6 py-2 rounded-lg hover:bg-secondary-btn-hover">Try Another Quiz</a>
+            
+        </div> 
+    </div>
 </body>
 </html>
