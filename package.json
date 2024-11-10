@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./static/tailwind.css -o ./static/style.css --watch",
     "build": "npx tailwindcss -i ./static/tailwind.css -o ./static/style.css --minify",
-    "start": "flask run",
-    "heroku-postbuild": "npm run build:css"
+    "start": "flask run"
   },
   "dependencies": {},
   "devDependencies": {

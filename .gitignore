@@ -21,8 +21,7 @@ dist/
 public/
 
 # Static assets (e.g., if you regenerate styles)
-static/tailwind.css
-static/style.css
+/static/style.css
 
 # SQLite database file (if used)
 *.sqlite3
