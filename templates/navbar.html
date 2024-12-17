@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Quiz Application</title>
+</head>
+<body class="font-poppins">
+
+    <!-- Navbar -->
+    <nav class="w-full h-20 sticky top-0 bg-primary-bg-color text-primary-text-color font-semibold px-4 md:px-24 flex items-center justify-between">
+        <!-- Logo -->
+        <h1  class="text-3xl tracking-tighter"><a href="/" id="qvakk-logo">QVAKK</a></h1>
+
+        <!-- Desktop Navigation Links -->
+        <ul id="desktop-links" class="hidden md:flex gap-8 text-lg">
+            <li><a href="/" class="protected-action">Home</a></li>
+            <li><a href="/profile" class="protected-action">Profile</a></li>
+            <li><a href="/quiz/select" class="protected-action">New Quiz</a></li>
+            {% if 'user_email' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li id="login_btn"><button>Login/Signup</button></li>
+            {% endif %}
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-butn" class="text-xl md:hidden">Menu</button>
+    </nav>
+
+    <!-- Mobile Navigation Sidebar -->
+    <div id="mobile-site" class="fixed top-0 right-0 w-2/3 h-full bg-white shadow-lg z-50 hidden">
+        <!-- Close Button -->
+        <button id="cross-butn" class="absolute top-8 right-8 text-xl">✕</button>
+
+        <!-- Mobile Navigation Links -->
+        <ul class="flex flex-col gap-8 text-lg mt-20 ml-6">
+            <li><a href="/" class="protected-action relative">Home</a></li>
+            <li><a href="/profile" class="protected-action">Profile</a></li>
+            <li><a href="/quiz/select" class="protected-action">New Quiz</a></li>
+            {% if 'user_email' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><button>Login/Signup</button></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -4,9 +4,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Quiz</title>
 </head>
-<body class="font-roboto bg-bg-color text-text-color">
-    <h1 class="font-poppins text-3xl text-center mb-8">Quiz Questions</h1>
-    <form action="{{ url_for('submit') }}" method="post" class="space-y-6 px-6">
+<body class="font-roboto">
+    {% include 'navbar.html' %}
+    <div class="bg-bg-color text-primary-text-color p-4 " style="min-height:calc(100vh - 80px) ;">
+        <h1 class="font-poppins text-3xl text-center mb-8">Quiz Questions</h1>
+        <form action="{{ url_for('quiz_result') }}" method="post" class="space-y-6 px-6">
         <!-- Initialize a custom variable to store unique numbers -->
         {% for question in questions %}
         {% set idx = loop.index %}
@@ -23,7 +25,10 @@
                 {% set idx = idx + 1 %}
             </div>
         {% endfor %}
-        <button type="submit" class="bg-primary-btn text-white px-6 py-2 rounded-lg hover:bg-primary-btn-hover">Submit Answers</button>
+        <button type="submit" class="bg-button-color hover:bg-button-hover text-primary-bg-color px-6 py-2 rounded-lg ">Submit Answers</button>
     </form>
+
+    </div>
+    
 </body>
 </html>
